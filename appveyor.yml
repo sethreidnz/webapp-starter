@@ -1,0 +1,19 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+environment:
+  WebPath: src\FrontendStarter.Web
+  nodejs_version: "8"
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - cmd: if not exist .\logs mkdir .\logs
+  - cmd: if not exist .\publish mkdir .\publish
+configuration: Release
+test: off
+cache:
+  - node_modules -> %WebPath%\package.json
+build_script:
+  - cmd: dotnet publish %WebPath% -c %CONFIGURATION% -o %APPVEYOR_BUILD_FOLDER%\publish
+artifacts:
+  - path: publish
+    name: Package
+    type: WebDeployPackage

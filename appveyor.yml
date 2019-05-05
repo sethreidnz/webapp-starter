@@ -1,7 +1,7 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 environment:
-  WebPath: src\FrontendStarter.Web
+  WebPath: src\WebStarter
   nodejs_version: "8"
 install:
   - ps: Install-Product node $env:nodejs_version

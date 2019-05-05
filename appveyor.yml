@@ -17,3 +17,9 @@ artifacts:
   - path: publish
     name: Package
     type: WebDeployPackage
+# Uncomment below to deploy to environment automatically
+#deploy:
+#  - provider: Environment
+#    name: environment-name
+#    on:
+#      branch: develop

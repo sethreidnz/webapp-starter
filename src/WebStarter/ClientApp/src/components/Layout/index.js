@@ -1,6 +1,8 @@
+// node_modules
 import React from "react";
 import { Link } from "react-router-dom";
 
+// local imports
 import "./Layout.scss";
 
 export const Layout = ({ children }) => (
